@@ -71,6 +71,19 @@ class MyArrayList{
 		return -1;
 	}
 	
+	public int size() {
+		return this.length;
+	}
+	
+	public int indexOf(int element) {
+		for(int i = 0; i < length; i++) {
+			if(arr[i] == element)
+				return i;
+		}
+		
+		return -1;
+	}
+	
 	public void displayList() {
 		System.out.print("[ ");
 		for(int i = 0; i < length-1; i++) {
@@ -90,13 +103,10 @@ public class arrayList {
 		Scanner sc = new Scanner(System.in);
 		MyArrayList list = new MyArrayList();
 		
-		System.out.println("Enter number of elements you want to enter");
 		
-		int n = sc.nextInt();
+		for(int i = 0; i < 5; i++)
+			list.add(i);
 		
-		for(int i = 0; i < n; i++) {
-			list.add(sc.nextInt());
-		}
 		list.displayList();
 		
 		list.add(1, 2);
@@ -108,6 +118,11 @@ public class arrayList {
 		System.out.println(list.get(0));
 		System.out.println(list.get(-2));
 		System.out.println(list.get(10));
+		
+		System.out.println(list.size());
+		
+		System.out.println(list.indexOf(1));
+		System.out.println(list.indexOf(-1));
 
 	}
 
