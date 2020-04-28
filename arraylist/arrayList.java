@@ -76,12 +76,21 @@ class MyArrayList{
 	}
 	
 	public int indexOf(int element) {
-		for(int i = 0; i < length; i++) {
+		for(int i = 0; i < this.length; i++) {
 			if(arr[i] == element)
 				return i;
 		}
 		
 		return -1;
+	}
+	
+	public boolean contains(int element) {
+		for(int i = 0; i < this.length; i++) {
+			if(arr[i] == element)
+				return true;
+		}
+		
+		return false;
 	}
 	
 	public void displayList() {
@@ -123,6 +132,9 @@ public class arrayList {
 		
 		System.out.println(list.indexOf(1));
 		System.out.println(list.indexOf(-1));
+		
+		System.out.println(list.contains(1));
+		System.out.println(list.contains(-1));
 
 	}
 
