@@ -1,28 +1,26 @@
 package arraylist;
 
-import java.util.*;
-
-class MyArrayList{
-	private int arr[];   
+class MyGenericArrayList<T>{
+	private Object arr[];   
 	private int length;       // contains the length of array 
 	private int capacity;     // contains max size of array
 	
 	// Constructor to declare array of size 10
-	public MyArrayList(){
-		arr = new int[10];      // declaring array
-		length = 0;				// initializing length variable
-		capacity = 10;          // initializing capacity variable
+	public MyGenericArrayList(){
+		arr = new Object[10];      // declaring array
+		length = 0;				   // initializing length variable
+		capacity = 10;             // initializing capacity variable
 	}
 	
 	// Constructor to declare array of specified size 
-	public MyArrayList(int capacity) {
-		arr = new int[capacity];   // declaring array
+	public MyGenericArrayList(int capacity) {
+		arr = new Object[capacity];   // declaring array
 		this.capacity = capacity;  // initializing capacity variable
 		length = 0;                // initializing length of array
 	}
 	
 	// Method to add element at the end of array
-	public void add(int element) {
+	public void add(T element) {
 		if(length == capacity) 
 			increaseSize();
 		arr[length++] = element;
@@ -30,7 +28,7 @@ class MyArrayList{
 	}
 	
 	// function to add element at specified index 
-	public void add(int index, int element) {
+	public void add(int index, T element) {
 		if(length == capacity)
 			increaseSize();
 		for(int i = length; i > index; i--) {
@@ -42,40 +40,42 @@ class MyArrayList{
 	}
 	
 	private void increaseSize() {
-		int newArr[] = new int[this.capacity];
+		Object newArr[] = new Object[this.capacity];
 		for(int i = 0; i < length; i++) {
 			newArr[i] = this.arr[i];
 		}
 		
 		this.capacity = this.capacity + this.capacity * 3 / 2;
 		
-		this.arr = new int[capacity];
+		this.arr = new Object[capacity];
 		
 		for(int i = 0; i < length; i++) {
 			this.arr[i] = newArr[i];
 		}
 	}
 	
-	public void set(int index, int element) {
+	public void set(int index, Object element) {
 		if(index >= 0 && index < length)  
 			arr[index] = element;
 		else
 			System.out.println(index + " index out of bound");
 	}
 	
-	public int get(int index) {
+	public T get(int index) {
 		if(index >= 0 && index < length)
-			return arr[index];
+			return (T)arr[index];
 		else
 			System.out.println(index + " index out of bound");
-		return -1;
+
+		return (T)(Object)(-1);
+		
 	}
 	
 	public int size() {
 		return this.length;
 	}
 	
-	public int indexOf(int element) {
+	public int indexOf(T element) {
 		for(int i = 0; i < this.length; i++) {
 			if(arr[i] == element)
 				return i;
@@ -84,7 +84,7 @@ class MyArrayList{
 		return -1;
 	}
 	
-	public boolean contains(int element) {
+	public boolean contains(T element) {
 		for(int i = 0; i < this.length; i++) {
 			if(arr[i] == element)
 				return true;
@@ -103,13 +103,12 @@ class MyArrayList{
 	}
 }
 
-
-public class arrayList {
+public class GenericArrayList {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		MyArrayList list = new MyArrayList();
+
+MyArrayList list = new MyArrayList();
 		
 		for(int i = 0; i < 5; i++)
 			list.add(i);
@@ -133,7 +132,6 @@ public class arrayList {
 		
 		System.out.println(list.contains(1));
 		System.out.println(list.contains(-1));
-
 	}
 
 }
