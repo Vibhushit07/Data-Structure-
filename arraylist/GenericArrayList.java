@@ -108,7 +108,7 @@ public class GenericArrayList {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-MyArrayList list = new MyArrayList();
+		MyArrayList list = new MyArrayList();
 		
 		for(int i = 0; i < 5; i++)
 			list.add(i);
