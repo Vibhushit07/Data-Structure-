@@ -30,6 +30,18 @@ class MyLinkedListt{
 		}
 	}
 	
+	public void insertAtHead(int data) {
+		
+		Node node = new Node(data);
+		
+		if(head == null) {
+			head = node;
+		} else {
+			node.next = head;
+			head = node;
+		}
+	}
+	
 	public void printList() {
 		
 		Node temp = head;
@@ -47,24 +59,20 @@ public class LinkedListt {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	
-		MyLinkedListt ll1 = new MyLinkedListt();
-		MyLinkedListt ll2 = new MyLinkedListt();
+		MyLinkedListt ll = new MyLinkedListt();
 		
-		ll1.insertAtEnd(1);
-		ll1.insertAtEnd(2);
-		ll1.insertAtEnd(3);
-		ll1.insertAtEnd(4);
-		ll1.insertAtEnd(5);
-		
-		ll2.insertAtEnd(6);
-		ll2.insertAtEnd(7);
-		ll2.insertAtEnd(8);
-		ll2.insertAtEnd(9);
-		ll2.insertAtEnd(10);
+		ll.insertAtEnd(1);
+		ll.insertAtEnd(2);
+		ll.insertAtEnd(3);
+		ll.insertAtEnd(4);
+		ll.insertAtEnd(5);
 	
-		ll1.printList();
-		System.out.println();
-		ll2.printList();
+		ll.printList();
+		
+		ll.insertAtHead(0);
+		
+		ll.printList();
+		
 		
 	}
 
