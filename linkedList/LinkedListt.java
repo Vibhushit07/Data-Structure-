@@ -94,6 +94,8 @@ class MyLinkedListt{
 		return false;
 	}
 	
+	public int getFirst() { return this.head.data; }
+	
 	public void printList() {
 		
 		Node temp = this.head;
@@ -141,6 +143,8 @@ public class LinkedListt {
 		
 		System.out.println(ll.contains(9));
 		System.out.println(ll.contains(-1));
+		
+		System.out.println(ll.getFirst());
 		
 	}
 
