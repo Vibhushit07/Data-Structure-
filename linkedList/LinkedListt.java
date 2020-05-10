@@ -3,6 +3,7 @@ package linkedList;
 class MyLinkedListt{
 	
 	Node head;
+	int size = 0;
 	
 	static class Node{
 		int data;
@@ -28,6 +29,8 @@ class MyLinkedListt{
 			
 			temp.next = node;
 		}
+		
+		this.size++;
 	}
 	
 	public void insertAtHead(int data) {
@@ -36,6 +39,7 @@ class MyLinkedListt{
 		
 		node.next = head;
 		head = node;
+		this.size++;
 	}
 	
 	public void insertAtPosition(int pos, int data) {
@@ -50,6 +54,7 @@ class MyLinkedListt{
 			
 			node.next = head;
 			head = node;
+			this.size++;
 			
 		} else {
 			
@@ -67,6 +72,7 @@ class MyLinkedListt{
 			
 				node.next = temp.next;
 				temp.next = node;
+				this.size++;
 			}
 		}
 	}
@@ -82,6 +88,8 @@ class MyLinkedListt{
 		
 		System.out.println();
 	}
+	
+	public int size() {	return this.size; }
 	
 }
 
@@ -110,6 +118,8 @@ public class LinkedListt {
 		ll.insertAtPosition(6, 9);
 		
 		ll.printList();
+		
+		System.out.println(ll.size());
 		
 	}
 
