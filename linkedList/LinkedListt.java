@@ -22,7 +22,7 @@ class MyLinkedListt{
 		if(head == null) {
 			this.head = node;
 		} else {
-			Node temp = head;
+			Node temp = this.head;
 			while(temp.next != null) {
 				temp = temp.next;
 			}
@@ -59,7 +59,7 @@ class MyLinkedListt{
 		} else {
 			
 			int i = 0;
-			Node temp = head;
+			Node temp = this.head;
 			
 			while(temp != null && i < pos-1) {
 				temp = temp.next;
@@ -81,9 +81,22 @@ class MyLinkedListt{
 	
 	public void clear() { this.head = null; }
 	
+	public boolean contains(int element) {
+		
+		Node temp = this.head;
+		
+		while(temp != null) {
+			if(temp.data == element)
+				return true;
+			temp = temp.next;
+		}
+		
+		return false;
+	}
+	
 	public void printList() {
 		
-		Node temp = head;
+		Node temp = this.head;
 		
 		while(temp != null) {
 			System.out.print(temp.data + " ");
@@ -123,8 +136,11 @@ public class LinkedListt {
 		
 		System.out.println(ll.size());
 		
-		ll.clear();
-		ll.printList();
+//		ll.clear();
+//		ll.printList();
+		
+		System.out.println(ll.contains(9));
+		System.out.println(ll.contains(-1));
 		
 	}
 
