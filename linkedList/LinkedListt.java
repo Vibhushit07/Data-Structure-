@@ -34,11 +34,40 @@ class MyLinkedListt{
 		
 		Node node = new Node(data);
 		
-		if(head == null) {
-			head = node;
-		} else {
+		node.next = head;
+		head = node;
+	}
+	
+	public void insertAtPosition(int pos, int data) {
+		
+		Node node = new Node(data);
+		
+		if(pos < 0) {
+			
+			System.out.println("Invalid position");
+			
+		} else if(pos == 0) {
+			
 			node.next = head;
 			head = node;
+			
+		} else {
+			
+			int i = 0;
+			Node temp = head;
+			
+			while(temp != null && i < pos-1) {
+				temp = temp.next;
+				i++;
+			}
+			
+			if(temp.next == null) {
+				System.out.println("Invalid Position");
+			} else {
+			
+				node.next = temp.next;
+				temp.next = node;
+			}
 		}
 	}
 	
@@ -50,6 +79,8 @@ class MyLinkedListt{
 			System.out.print(temp.data + " ");
 			temp = temp.next;
 		}
+		
+		System.out.println();
 	}
 	
 }
@@ -73,6 +104,12 @@ public class LinkedListt {
 		
 		ll.printList();
 		
+		ll.insertAtPosition(1, 4);
+		ll.insertAtPosition(-1, 0);
+		ll.insertAtPosition(7, 9);
+		ll.insertAtPosition(6, 9);
+		
+		ll.printList();
 		
 	}
 
