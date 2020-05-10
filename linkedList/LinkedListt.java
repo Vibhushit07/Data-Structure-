@@ -20,7 +20,7 @@ class MyLinkedListt{
 		Node node = new Node(data);
 		
 		if(head == null) {
-			head = node;
+			this.head = node;
 		} else {
 			Node temp = head;
 			while(temp.next != null) {
@@ -38,7 +38,7 @@ class MyLinkedListt{
 		Node node = new Node(data);
 		
 		node.next = head;
-		head = node;
+		this.head = node;
 		this.size++;
 	}
 	
@@ -53,7 +53,7 @@ class MyLinkedListt{
 		} else if(pos == 0) {
 			
 			node.next = head;
-			head = node;
+			this.head = node;
 			this.size++;
 			
 		} else {
@@ -77,6 +77,10 @@ class MyLinkedListt{
 		}
 	}
 	
+	public int size() {	return this.size; }
+	
+	public void clear() { this.head = null; }
+	
 	public void printList() {
 		
 		Node temp = head;
@@ -88,8 +92,6 @@ class MyLinkedListt{
 		
 		System.out.println();
 	}
-	
-	public int size() {	return this.size; }
 	
 }
 
@@ -120,6 +122,9 @@ public class LinkedListt {
 		ll.printList();
 		
 		System.out.println(ll.size());
+		
+		ll.clear();
+		ll.printList();
 		
 	}
 
