@@ -94,7 +94,27 @@ class MyLinkedListt{
 		return false;
 	}
 	
-	public int getFirst() { return this.head.data; }
+	public int getFirst() { 
+		
+		if(this.head == null)
+			return -1;
+		
+		return this.head.data; 
+		
+	}
+	
+	public int getLast() {
+		
+		if(this.head == null)
+			return -1;
+		
+		Node temp = this.head;
+		
+		while(temp.next != null)
+			temp = temp.next;
+		
+		return temp.data;
+	}
 	
 	public void printList() {
 		
@@ -145,6 +165,8 @@ public class LinkedListt {
 		System.out.println(ll.contains(-1));
 		
 		System.out.println(ll.getFirst());
+		
+		System.out.println(ll.getLast());
 		
 	}
 
