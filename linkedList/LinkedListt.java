@@ -121,6 +121,27 @@ class MyLinkedListt{
 			head = head.next;
 	}
 	
+	public void removeLast() {
+		Node prev = null;
+		Node curr = head;
+		
+		if(head == null) {
+			return;
+			
+		} else if(head.next == null) {
+			head = null;
+			
+		} else {
+		
+			while(curr.next != null) {
+				prev = curr;
+				curr = curr.next;
+			}
+			
+			prev.next = null;
+		}
+	}
+	
 	public void printList() {
 		
 		Node temp = this.head;
@@ -174,6 +195,9 @@ public class LinkedListt {
 		System.out.println(ll.getLast());
 		
 		ll.remove();
+		ll.printList();
+		
+		ll.removeLast();
 		ll.printList();
 		
 	}
