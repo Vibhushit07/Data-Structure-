@@ -117,19 +117,19 @@ class MyLinkedListt{
 	}
 	
 	public void remove() {
-		if(head != null)
-			head = head.next;
+		if(this.head != null)
+			this.head = this.head.next;
 	}
 	
 	public void removeLast() {
 		Node prev = null;
-		Node curr = head;
+		Node curr = this.head;
 		
 		if(head == null) {
 			return;
 			
-		} else if(head.next == null) {
-			head = null;
+		} else if(this.head.next == null) {
+			this.head = null;
 			
 		} else {
 		
@@ -140,6 +140,23 @@ class MyLinkedListt{
 			
 			prev.next = null;
 		}
+	}
+	
+	public int indexOf(int element) {
+		
+		int index = 0;
+		
+		Node curr = this.head;
+		
+		while(curr != null) {
+			
+			if(curr.data == element) return index;
+			
+			index++;
+			curr = curr.next;
+		}
+		
+		return -1;
 	}
 	
 	public void printList() {
@@ -199,6 +216,9 @@ public class LinkedListt {
 		
 		ll.removeLast();
 		ll.printList();
+		
+		System.out.println(ll.indexOf(2));
+		System.out.println(ll.indexOf(0));
 		
 	}
 
