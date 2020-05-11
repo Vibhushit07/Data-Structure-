@@ -94,6 +94,27 @@ class MyLinkedListt{
 		return false;
 	}
 	
+	public int get(int index) {
+		
+		if(index < 0)
+			return -1;
+		
+		int i = 0;
+		Node curr = head;
+		
+		while(curr != null) {
+			
+			if(i == index)
+				return curr.data;
+			
+			i++;
+			curr = curr.next;
+		}
+		
+		return -1;
+		
+	}
+	
 	public int getFirst() { 
 		
 		if(this.head == null)
@@ -219,6 +240,9 @@ public class LinkedListt {
 		
 		System.out.println(ll.indexOf(2));
 		System.out.println(ll.indexOf(0));
+		
+		System.out.println(ll.get(3));
+		System.out.println(ll.get(-1));
 		
 	}
 
