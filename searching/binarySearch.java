@@ -32,7 +32,7 @@ public class binarySearch {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Enter the number you want to enter");
+		System.out.println("Enter the number of elements you want to enter");
 		
 		int n = sc.nextInt();
 		int arr[] = new int[n];
