@@ -163,6 +163,34 @@ class MyLinkedListt{
 		}
 	}
 	
+	public void remove(int index) {
+		
+		if(index < 0) {
+			System.out.println("Index is invalid");
+		
+		}else if(index == 0) {
+			this.head = this.head.next;
+			
+		}else {
+		
+			Node curr = this.head;
+			Node prev = null;
+			int i = 0;
+		
+			while(curr != null && i < index) {
+				i++;
+				prev = curr;
+				curr = curr.next;
+			}
+			
+			if(curr == null) {
+				System.out.println("Invalid index");
+			} else {
+				prev.next = curr.next;
+			}
+		}
+	}
+	
 	public int indexOf(int element) {
 		
 		int index = 0;
@@ -243,6 +271,12 @@ public class LinkedListt {
 		
 		System.out.println(ll.get(3));
 		System.out.println(ll.get(-1));
+		
+		ll.remove(0);
+		ll.printList();
+		ll.remove(-1);
+		ll.remove(10);
+		
 		
 	}
 
