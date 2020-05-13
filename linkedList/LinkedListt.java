@@ -208,6 +208,28 @@ class MyLinkedListt{
 		return -1;
 	}
 	
+	public void set(int index, int element) {
+		
+		if(index < 0) {
+			System.out.println("Invlaid index");
+		} else {
+			int i = 0;
+			Node curr = this.head;
+			
+			while(curr != null && i < index) {
+				i++;
+				curr = curr.next;
+			}
+			
+			if(curr == null) {
+				System.out.println("Invalid index");
+			} else {
+				curr.data = element;
+			}
+		}
+		
+	}
+	
 	public void printList() {
 		
 		Node temp = this.head;
@@ -277,6 +299,11 @@ public class LinkedListt {
 		ll.remove(-1);
 		ll.remove(10);
 		
+		ll.set(0, 10);
+		ll.set(3, 9);
+		ll.set(10, 10);
+		ll.set(-1, 0);
+		ll.printList();
 		
 	}
 
