@@ -2,6 +2,10 @@ package arrays;
 
 import java.util.Scanner;
 
+/*
+ * Count sub arrays having sum less than k
+ */
+
 public class SubArray1 {
 	
     public static void main(String[] args) {
