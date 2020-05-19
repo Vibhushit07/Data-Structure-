@@ -1,8 +1,9 @@
-package strings;
+package hashing;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Scanner;
 
-public class isogram {
+public class IsogramStrings {
 
 	static boolean checkIsogram(String str) {
 		
