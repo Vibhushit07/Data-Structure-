@@ -84,6 +84,19 @@ class BinaryTree {
 		
 		return 1 + Math.max(height(root.left), height(root.right));
 	}
+	
+	// print elements at given level
+	void printAtLevel(Node root, int level) {
+		if(root == null) return;
+		
+		if(level == 1) {
+			System.out.print(root.data + " ");
+			return;
+		}
+		
+		printAtLevel(root.left, level-1);
+		printAtLevel(root.right, level-1);
+	}
 }
 
 public class btree {
@@ -107,5 +120,17 @@ public class btree {
 		System.out.println("Leaf Nodes: " + bt.leafNodes(bt.root));
 		
 		System.out.println("Height of tree: " + bt.height(bt.root));
+		
+		System.out.println("Elements At level 1: " );
+		bt.printAtLevel(bt.root, 1);
+		System.out.println();
+		
+		System.out.println("Elements At level 2: " );
+		bt.printAtLevel(bt.root, 2);
+		System.out.println();
+		
+		System.out.println("Elements At level 3: " );
+		bt.printAtLevel(bt.root, 3);
+		System.out.println();
 	}
 }
