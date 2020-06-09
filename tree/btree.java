@@ -68,6 +68,15 @@ class BinaryTree {
 			return 1 + countNodes(root.left) + countNodes(root.right);
 		return 0;
 	}
+	
+	// to calculate leaf nodes
+	int leafNodes(Node root) {
+		if(root == null)
+			return 0;
+		if(root.left == null && root.right == null)
+			return 1;
+		return leafNodes(root.left) + leafNodes(root.right);
+	}
 }
 
 public class btree {
@@ -87,5 +96,7 @@ public class btree {
 		System.out.println("Sum of all nodes of binary tree is: " + bt.treeSum(bt.root));
 		
 		System.out.println("Number of node in a binary tree: " + bt.countNodes(bt.root));
+		
+		System.out.println("Leaf Nodes: " + bt.leafNodes(bt.root));
 	}
 }
