@@ -55,9 +55,17 @@ class BinaryTree {
 		System.out.println();
 	}
 	
-	int treeSum(Node root) {
+	// to calculate of sum of all nodes in a tree
+	int treeSum(Node root) { 
 		if(root != null)
 			return root.data + treeSum(root.left) + treeSum(root.right);
+		return 0;
+	}
+	
+	// to calculate number of nodes in a tree
+	int countNodes(Node root) { 
+		if(root != null)
+			return 1 + countNodes(root.left) + countNodes(root.right);
 		return 0;
 	}
 }
@@ -67,6 +75,7 @@ public class btree {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		//explicit linking
 		BinaryTree bt = new BinaryTree(2); // BinaryTree with root node 2
 		bt.root.left = new Node(3);
 		bt.root.right = new Node(5);
@@ -77,5 +86,6 @@ public class btree {
 		
 		System.out.println("Sum of all nodes of binary tree is: " + bt.treeSum(bt.root));
 		
+		System.out.println("Number of node in a binary tree: " + bt.countNodes(bt.root));
 	}
 }
