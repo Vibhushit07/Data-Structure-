@@ -77,6 +77,13 @@ class BinaryTree {
 			return 1;
 		return leafNodes(root.left) + leafNodes(root.right);
 	}
+	
+	// to calculate height of tree 
+	int height(Node root) {
+		if(root == null) return -1;
+		
+		return 1 + Math.max(height(root.left), height(root.right));
+	}
 }
 
 public class btree {
@@ -98,5 +105,7 @@ public class btree {
 		System.out.println("Number of node in a binary tree: " + bt.countNodes(bt.root));
 		
 		System.out.println("Leaf Nodes: " + bt.leafNodes(bt.root));
+		
+		System.out.println("Height of tree: " + bt.height(bt.root));
 	}
 }
