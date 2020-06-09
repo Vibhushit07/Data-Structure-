@@ -51,6 +51,14 @@ class BinaryTree {
 			
 			System.out.print(node.data + " ");
 		}
+		
+		System.out.println();
+	}
+	
+	int treeSum(Node root) {
+		if(root != null)
+			return root.data + treeSum(root.left) + treeSum(root.right);
+		return 0;
 	}
 }
 
@@ -66,6 +74,8 @@ public class btree {
 		bt.root.right.left = new Node(7);
 		
 		bt.levelOrder();
+		
+		System.out.println("Sum of all nodes of binary tree is: " + bt.treeSum(bt.root));
 		
 	}
 }
