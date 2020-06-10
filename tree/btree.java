@@ -36,13 +36,6 @@ class BinaryTree {
 		this.root = new Node(data);
 	}
 	
-	// to calculate of sum of all nodes in a tree
-	int treeSum(Node root) { 
-		if(root != null)
-			return root.data + treeSum(root.left) + treeSum(root.right);
-		return 0;
-	}
-	
 	// to calculate number of nodes in a tree
 	int countNodes(Node root) { 
 		if(root != null)
@@ -91,8 +84,6 @@ public class btree {
 		bt.root.right = new Node(5);
 		bt.root.left.right = new Node(9);
 		bt.root.right.left = new Node(7);
-		
-		System.out.println("Sum of all nodes of binary tree is: " + bt.treeSum(bt.root));
 		
 		System.out.println("Number of node in a binary tree: " + bt.countNodes(bt.root));
 		
