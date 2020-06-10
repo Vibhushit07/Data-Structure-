@@ -35,18 +35,23 @@ class BinaryTree {
 		this.root = new Node(data);
 	}
 
-	int treeSum(Node root) { 
-		if(root != null)
-			return root.data + treeSum(root.left) + treeSum(root.right);
-		return 0;
+	void printAtLevel(Node root, int level) {
+		if(root == null) return;
+		
+		if(level == 1) {
+			System.out.print(root.data + " ");
+			return;
+		}
+		
+		printAtLevel(root.left, level-1);
+		printAtLevel(root.right, level-1);
 	}
 }
 
-public class bTreeSum {
+public class bTreeLevelNodes {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
 		//explicit linking
 		BinaryTree bt = new BinaryTree(2); // BinaryTree with root node 2
 		bt.root.left = new Node(3);
@@ -54,7 +59,17 @@ public class bTreeSum {
 		bt.root.left.right = new Node(9);
 		bt.root.right.left = new Node(7);
 		
-		System.out.println("Sum of all nodes of binary tree is: " + bt.treeSum(bt.root));
+		System.out.println("Elements At level 1: " );
+		bt.printAtLevel(bt.root, 1);
+		System.out.println();
 		
+		System.out.println("Elements At level 2: " );
+		bt.printAtLevel(bt.root, 2);
+		System.out.println();
+		
+		System.out.println("Elements At level 3: " );
+		bt.printAtLevel(bt.root, 3);
+		System.out.println();
 	}
+
 }
