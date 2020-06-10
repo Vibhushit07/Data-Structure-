@@ -29,7 +29,7 @@ class BinaryTree {
 		
 		if(root1 == null || root2 == null) return false;
 		
-		return isSameStructure(root1.right, root2.left) && isSameStructure(root1.left, root2.right);
+		return isSameStructure(root1.left, root2.left) && isSameStructure(root1.right, root2.right);
 	}
 }
 
