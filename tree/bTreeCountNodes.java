@@ -1,14 +1,14 @@
 package tree;
 
 /**
-* 	 Tree will look like this
-* 
-*         2
-*       /   \
-*      3     5
-*       \   /
-*        9 7
-*/
+ * 	 Tree will look like this
+ * 
+ *         2
+ *       /   \
+ *      3     5
+ *       \   /
+ *        9 7
+ */
 
 import java.util.*;
 
@@ -35,27 +35,14 @@ class BinaryTree {
 		this.root = new Node(data);
 	}
 	
-	void levelOrder() {
-		Queue<Node> q = new LinkedList<>();
-		q.add(this.root);
-		
-		System.out.println("Level order of Binary Tree");
-		while(!q.isEmpty()) {
-			Node node = q.remove();
-			
-			if(node.left != null)
-				q.add(node.left);
-			if(node.right != null)
-				q.add(node.right);
-			
-			System.out.print(node.data + " ");
-		}
-		
-		System.out.println();
+	int countNodes(Node root) { 
+		if(root != null)
+			return 1 + countNodes(root.left) + countNodes(root.right);
+		return 0;
 	}
 }
 
-public class bTreeLevel {
+public class bTreeCountNodes {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -67,7 +54,6 @@ public class bTreeLevel {
 		bt.root.left.right = new Node(9);
 		bt.root.right.left = new Node(7);
 		
-		bt.levelOrder();
-		
+		System.out.println("Number of node in a binary tree: " + bt.countNodes(bt.root));
 	}
 }

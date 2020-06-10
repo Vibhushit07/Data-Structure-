@@ -36,11 +36,23 @@ class BinaryTree {
 		this.root = new Node(data);
 	}
 	
-	// to calculate number of nodes in a tree
-	int countNodes(Node root) { 
-		if(root != null)
-			return 1 + countNodes(root.left) + countNodes(root.right);
-		return 0;
+	void levelOrder() {
+		Queue<Node> q = new LinkedList<>();
+		q.add(this.root);
+		
+		System.out.println("Level order of Binary Tree");
+		while(!q.isEmpty()) {
+			Node node = q.remove();
+			
+			if(node.left != null)
+				q.add(node.left);
+			if(node.right != null)
+				q.add(node.right);
+			
+			System.out.print(node.data + " ");
+		}
+		
+		System.out.println();
 	}
 	
 	// to calculate leaf nodes
@@ -85,7 +97,7 @@ public class btree {
 		bt.root.left.right = new Node(9);
 		bt.root.right.left = new Node(7);
 		
-		System.out.println("Number of node in a binary tree: " + bt.countNodes(bt.root));
+		bt.levelOrder();
 		
 		System.out.println("Leaf Nodes: " + bt.leafNodes(bt.root));
 		
