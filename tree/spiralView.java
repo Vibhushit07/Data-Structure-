@@ -45,36 +45,40 @@
 //		this.root = new Node(data);
 //	}
 //	
-//	void view(Node root, int level) {
-//		if(root == null) return;
+//	void view(Node root) {
 //		
-//		TreeMap<Integer, Pair> map = new TreeMap<>();
+//		Stack<Node> s1 = new Stack<>();
+//		Stack<Node> s2 = new Stack<>();
 //		
-//		viewUtil(root, 0, 0, map);
-//		
-//		for(Integer i : map.keySet()) {
-//			System.out.print(map.get(i).data + " ");
-//		}
-//	}
-//	
-//	void viewUtil(Node root, int dist, int level, TreeMap<Integer, Pair> map) {
-//		if(root == null) return;
-//		
-//		if(!map.containsKey(dist)) {
-//			map.put(dist, new Pair(root.data, level));
-//		} else {
-//			if(map.get(dist).level <= level) {
-//				map.put(dist, new Pair(root.data, level));
+//		s1.push(root);
+//		 
+//		while(!s1.isEmpty() || !s2.isEmpty()) {
+//			
+//			while(!s1.isEmpty()) {
+//				Node node = s1.pop();
+//				System.out.print(node.data + " ");
+//				
+//				if(node.right != null)
+//					s2.push(node.right);
+//				if(node.left != null)
+//					s2.push(node.left);
+//			}
+//			
+//			while(!s2.isEmpty()) {
+//				Node node = s2.pop();
+//				System.out.print(node.data + " ");
+//				
+//				if(node.left != null)
+//					s1.push(node.left);
+//				if(node.right != null)
+//					s1.push(node.right);
 //			}
 //		}
-//		
-//		viewUtil(root.left, dist-1, level+1, map);
-//		viewUtil(root.right, dist+1, level+1, map);
 //	}
 //	
 //}
 //
-//public class bottomView {
+//public class spiralView {
 //
 //	public static void main(String[] args) {
 //		// TODO Auto-generated method stub
@@ -86,7 +90,7 @@
 //		bt.root.left.right = new Node(9);
 //		bt.root.right.left = new Node(7);
 //		
-//		System.out.println("Bottom View");
-//		bt.view(bt.root, 1);
+//		System.out.println("Spiral View");
+//		bt.view(bt.root);
 //	}
 //}
