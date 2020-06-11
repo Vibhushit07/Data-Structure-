@@ -1,6 +1,8 @@
 package BinarySearchTree;
 
-class inorderRec{
+import java.util.*;
+
+class inorderRecursive{
 	void print(Node node) {
 		if(node == null) {
 			return;
@@ -12,12 +14,36 @@ class inorderRec{
 	}
 }
 
+class inorderIterative{
+	void print(Node node) {
+		if(node == null) {
+			return;
+		}
+		
+		Node curr = node;
+		
+		Stack<Node> stack = new Stack<>();
+		
+		while(curr != null || !stack.isEmpty()) {
+			while(curr != null) {
+				stack.push(curr);
+				curr = curr.left;
+			}
+			
+			curr = stack.pop(); 
+			System.out.print(curr.data + " ");
+			
+			curr = curr.right; 
+		}
+	}
+}
+
 public class Inorder {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		inorderRec in = new inorderRec();
+		inorderRecursive in = new inorderRecursive();
 		
 		bst tree = new bst();
 		tree.insert(50); 
@@ -29,6 +55,20 @@ public class Inorder {
         tree.insert(80);
         
         in.print(tree.root);
+        
+        inorderIterative inT = new inorderIterative();
+        
+        bst tree1 = new bst();
+		tree1.insert(5); 
+        tree1.insert(3); 
+        tree1.insert(2); 
+        tree1.insert(4); 
+        tree1.insert(7); 
+        tree1.insert(6); 
+        tree1.insert(8);
+        
+        System.out.println();
+        inT.print(tree1.root);
 	}
 
 }
