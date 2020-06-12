@@ -5,9 +5,11 @@ public class inorderSuccessor {
 	public static Node getMin(Node root) {
 		if(root == null) return root;
 		
-		if(root.left == null) return root;
+		while(root.left != null) {
+			root = root.left;
+		}
 		
-		return getMin(root.left);
+		return root;
 	}
 
 	public static Node getInorderSuccessor(Node root, int val) {
