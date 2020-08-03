@@ -9,63 +9,63 @@ class MyArrayList{
 	
 	// Constructor to declare array of size 10
 	public MyArrayList(){
-		arr = new int[10];      // declaring array
-		length = 0;				// initializing length variable
-		capacity = 10;          // initializing capacity variable
+		this.arr = new int[10];      // declaring array
+		this.length = 0;				// initializing length variable
+		this.capacity = 10;          // initializing capacity variable
 	}
 	
 	// Constructor to declare array of specified size 
 	public MyArrayList(int capacity) {
-		arr = new int[capacity];   // declaring array
+		this.arr = new int[capacity];   // declaring array
 		this.capacity = capacity;  // initializing capacity variable
-		length = 0;                // initializing length of array
+		this.length = 0;                // initializing length of array
 	}
 	
 	// Method to add element at the end of array
 	public void add(int element) {
-		if(length == capacity) 
+		if(this.length == this.capacity) 
 			increaseSize();
-		arr[length++] = element;
+		this.arr[this.length++] = element;
 	
 	}
 	
 	// function to add element at specified index 
 	public void add(int index, int element) {
-		if(length == capacity)
+		if(this.length == this.capacity)
 			increaseSize();
-		for(int i = length; i > index; i--) {
-			arr[i] = arr[i-1];
+		for(int i = this.length; i > index; i--) {
+			this.arr[i] = this.arr[i-1];
 		}
 		
-		arr[index] = element;
-		length++;
+		this.arr[index] = element;
+		this.length++;
 	}
 	
 	private void increaseSize() {
 		int newArr[] = new int[this.capacity];
-		for(int i = 0; i < length; i++) {
+		for(int i = 0; i < this.length; i++) {
 			newArr[i] = this.arr[i];
 		}
 		
 		this.capacity = this.capacity + this.capacity * 3 / 2;
 		
-		this.arr = new int[capacity];
+		this.arr = new int[this.capacity];
 		
-		for(int i = 0; i < length; i++) {
+		for(int i = 0; i < this.length; i++) {
 			this.arr[i] = newArr[i];
 		}
 	}
 	
 	public void set(int index, int element) {
-		if(index >= 0 && index < length)  
-			arr[index] = element;
+		if(index >= 0 && index < this.length)  
+			this.arr[index] = element;
 		else
 			System.out.println(index + " index out of bound");
 	}
 	
 	public int get(int index) {
-		if(index >= 0 && index < length)
-			return arr[index];
+		if(index >= 0 && index < this.length)
+			return this.arr[index];
 		else
 			System.out.println(index + " index out of bound");
 		return -1;
@@ -77,7 +77,7 @@ class MyArrayList{
 	
 	public int indexOf(int element) {
 		for(int i = 0; i < this.length; i++) {
-			if(arr[i] == element)
+			if(this.arr[i] == element)
 				return i;
 		}
 		
@@ -86,7 +86,7 @@ class MyArrayList{
 	
 	public boolean contains(int element) {
 		for(int i = 0; i < this.length; i++) {
-			if(arr[i] == element)
+			if(this.arr[i] == element)
 				return true;
 		}
 		
@@ -95,11 +95,11 @@ class MyArrayList{
 	
 	public void displayList() {
 		System.out.print("[ ");
-		for(int i = 0; i < length-1; i++) {
+		for(int i = 0; i < this.length-1; i++) {
 			System.out.print(this.arr[i] + ", ");
 		}
 		
-		System.out.println(this.arr[length-1] + "]");
+		System.out.println(this.arr[this.length-1] + "]");
 	}
 }
 
