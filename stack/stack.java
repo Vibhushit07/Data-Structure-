@@ -28,6 +28,15 @@ class MyStack {
 		}
 	}
 	
+	public int peek() {
+		if(this.top == -1) {
+			System.out.println("Underflow");
+			return -1;
+		} else {
+			return this.arr[this.top];
+		}
+	}
+	
 	public void printStack() {
 		for(int i = 0; i <= this.top; i++)
 			System.out.print(this.arr[i] + " ");
@@ -48,10 +57,9 @@ public class stack {
 		
 		ms.push(10);
 		
-		for(int i = 0; i < 10; i++)
-			System.out.println(ms.pop());
-		
 		ms.pop();
+		
+		System.out.println(ms.peek());
 	}
 
 }
