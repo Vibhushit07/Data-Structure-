@@ -37,6 +37,10 @@ class MyStack {
 		}
 	}
 	
+	public boolean isEmpty() {
+		return top < 0;
+	}
+	
 	public void printStack() {
 		for(int i = 0; i <= this.top; i++)
 			System.out.print(this.arr[i] + " ");
@@ -60,6 +64,13 @@ public class stack {
 		ms.pop();
 		
 		System.out.println(ms.peek());
+		
+		System.out.println(ms.isEmpty());
+		
+		for(int i = 0; i < 10; i++)
+			ms.pop();
+		
+		System.out.println(ms.isEmpty());
 	}
 
 }
