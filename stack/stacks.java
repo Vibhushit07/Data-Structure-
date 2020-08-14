@@ -44,6 +44,10 @@ class MyStacks {
 		return this.top == null ? -1 : this.top.data;
 	}
 	
+	public boolean isEmpty() {
+		return this.top == null;
+	}
+	
 	public void printStack() {
 		Node temp = this.top;
 		
@@ -73,6 +77,8 @@ public class stacks {
 		ms.printStack();
 		
 		System.out.println(ms.peek());
+		
+		System.out.println(ms.isEmpty());
 	}
 
 }
