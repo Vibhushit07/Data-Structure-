@@ -40,6 +40,10 @@ class MyStacks {
 		return data;
 	}
 	
+	public int peek() {
+		return this.top == null ? -1 : this.top.data;
+	}
+	
 	public void printStack() {
 		Node temp = this.top;
 		
@@ -67,6 +71,8 @@ public class stacks {
 		
 		System.out.println(ms.pop());
 		ms.printStack();
+		
+		System.out.println(ms.peek());
 	}
 
 }
