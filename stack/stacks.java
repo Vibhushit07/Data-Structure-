@@ -30,6 +30,16 @@ class MyStacks {
 		}
 	}
 	
+	public int pop() {
+		if(this.top == null) {
+			return -1;
+		}
+		
+		int data = this.top.data;
+		this.top = this.top.next;
+		return data;
+	}
+	
 	public void printStack() {
 		Node temp = this.top;
 		
@@ -37,7 +47,7 @@ class MyStacks {
 			System.out.print(temp.data + " ");
 			temp = temp.next;
 		}
-		
+		System.out.println();
 	}
 }
 
@@ -53,6 +63,9 @@ public class stacks {
 		ms.push(4);
 		ms.push(5);
 		
+		ms.printStack();
+		
+		System.out.println(ms.pop());
 		ms.printStack();
 	}
 
