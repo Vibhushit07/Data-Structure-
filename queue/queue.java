@@ -52,6 +52,10 @@ class MyQueue {
 		return this.front == this.rear;
 	}
 	
+	public int size() {
+		return this.rear;
+	}
+	
 	public void printQueue () {
 		if(this.front == this.rear) {
 			System.out.println("Queue is empty");
@@ -85,7 +89,8 @@ public class queue {
 		System.out.println(mq.peek());
 		
 		System.out.println(mq.isEmpty());
-
+		
+		System.out.println(mq.size());
 	}
 
 }
