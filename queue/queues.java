@@ -57,6 +57,10 @@ class MyQueues {
 		return this.front.data;
 	}
 	
+	public boolean isEmpty () {
+		return this.front == null;
+	}
+	
 	public void printQueue() {
 		Node temp = this.front;
 		
@@ -85,5 +89,7 @@ public class queues {
 		mq.printQueue();
 		
 		System.out.println(mq.peek());
+		
+		System.out.println(mq.isEmpty());
 	}
 }
