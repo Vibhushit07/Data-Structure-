@@ -48,6 +48,15 @@ class MyQueues {
 		return data;
 	}
 	
+	public int peek() {
+		if(this.front == null) {
+			System.out.println("Queue is empty");
+			return -1;
+		}
+		
+		return this.front.data;
+	}
+	
 	public void printQueue() {
 		Node temp = this.front;
 		
@@ -75,5 +84,6 @@ public class queues {
 		System.out.println(mq.dequeue());
 		mq.printQueue();
 		
+		System.out.println(mq.peek());
 	}
 }
