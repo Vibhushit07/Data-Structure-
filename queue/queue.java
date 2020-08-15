@@ -22,6 +22,24 @@ class MyQueue {
 		this.arr[this.rear++] = data;
 	}
 	
+	public int dequeue() {
+		if(this.front == this.rear) {
+			System.out.println("Underflow");
+			return -1;
+		}
+		
+		int delete = this.arr[this.front];
+		
+		for(int i = this.front; i < this.rear - 1; i++) {
+			this.arr[i] = this.arr[i+1];
+		}
+		
+		this.rear--;
+		
+		return delete;
+		
+	}
+	
 	public void printQueue () {
 		if(this.front == this.rear) {
 			System.out.println("Queue is empty");
@@ -45,6 +63,10 @@ public class queue {
 		for(int i = 0; i <= 10; i++) {
 			my.enqueue(i);
 		}
+		
+		my.printQueue();
+		
+		System.out.println(my.dequeue());
 		
 		my.printQueue();
 
