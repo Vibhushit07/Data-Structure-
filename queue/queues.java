@@ -34,6 +34,8 @@ class MyQueues {
 			this.rear.next = newNode;
 			this.rear = newNode;
 		}
+		
+		this.size++;
 	}
 	
 	public int dequeue() {
@@ -44,7 +46,7 @@ class MyQueues {
 		
 		int data = this.front.data;
 		this.front = this.front.next;
-		
+		this.size--;
 		return data;
 	}
 	
@@ -59,6 +61,10 @@ class MyQueues {
 	
 	public boolean isEmpty () {
 		return this.front == null;
+	}
+	
+	public int size () {
+		return this.size;
 	}
 	
 	public void printQueue() {
@@ -91,5 +97,7 @@ public class queues {
 		System.out.println(mq.peek());
 		
 		System.out.println(mq.isEmpty());
+		
+		System.out.println(mq.size());
 	}
 }
