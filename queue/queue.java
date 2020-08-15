@@ -36,8 +36,16 @@ class MyQueue {
 		
 		this.rear--;
 		
-		return delete;
+		return delete;	
+	}
+	
+	public int peek() {
+		if(this.front == this.rear) {
+			System.out.println("Queue is empty");
+			return -1;
+		}
 		
+		return this.arr[this.front];
 	}
 	
 	public void printQueue () {
@@ -58,17 +66,19 @@ public class queue {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		MyQueue my = new MyQueue();
+		MyQueue mq = new MyQueue();
 		
 		for(int i = 0; i <= 10; i++) {
-			my.enqueue(i);
+			mq.enqueue(i);
 		}
 		
-		my.printQueue();
+		mq.printQueue();
 		
-		System.out.println(my.dequeue());
+		System.out.println(mq.dequeue());
 		
-		my.printQueue();
+		mq.printQueue();
+		
+		System.out.println(mq.peek());
 
 	}
 
