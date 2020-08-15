@@ -36,6 +36,18 @@ class MyQueues {
 		}
 	}
 	
+	public int dequeue() {
+		if(this.front == null) {
+			System.out.println("Underflow");
+			return -1;
+		}
+		
+		int data = this.front.data;
+		this.front = this.front.next;
+		
+		return data;
+	}
+	
 	public void printQueue() {
 		Node temp = this.front;
 		
@@ -59,5 +71,9 @@ public class queues {
 		}
 		
 		mq.printQueue();
+		
+		System.out.println(mq.dequeue());
+		mq.printQueue();
+		
 	}
 }
