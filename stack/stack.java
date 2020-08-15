@@ -38,7 +38,11 @@ class MyStack {
 	}
 	
 	public boolean isEmpty() {
-		return top < 0;
+		return this.top < 0;
+	}
+	
+	public int size() {
+		return this.top + 1;
 	}
 	
 	public void printStack() {
@@ -67,10 +71,11 @@ public class stack {
 		
 		System.out.println(ms.isEmpty());
 		
-		for(int i = 0; i < 10; i++)
-			ms.pop();
+		ms.pop();
 		
 		System.out.println(ms.isEmpty());
+		
+		System.out.println(ms.size());
 	}
 
 }
