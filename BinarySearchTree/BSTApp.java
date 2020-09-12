@@ -1,6 +1,6 @@
 package BinarySearchTree;
 
-public class Search {
+public class BSTApp {
 	
 	public static boolean search(Node root, int data) {
 		if(root == null) return false;
