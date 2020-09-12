@@ -15,6 +15,21 @@ public class BSTApp {
 		
 		return false;
 	}
+	
+	public static int getMin(Node root) {
+		if(root == null) {
+			System.out.println("Empty tree");
+			return -1;
+		}
+		
+		Node temp = root;
+		
+		while(temp.left != null) {
+			temp = temp.left;
+		}
+		
+		return temp.data;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -32,6 +47,8 @@ public class BSTApp {
 		
 		System.out.println(search(tree.root, 8));
 		System.out.println(search(tree.root, 5));
+		
+		System.out.println(getMin(tree.root));
 	}
 
 }
