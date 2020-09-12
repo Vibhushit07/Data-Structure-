@@ -8,12 +8,10 @@ public class BSTApp {
 		if(root.data == data) return true;
 		
 		if(root.data < data) {
-			search(root.left, data);
+			return search(root.right, data);
 		} else {
-			search(root.right, data);
+			return search(root.left, data);
 		}
-		
-		return false;
 	}
 	
 	public static int getMin(Node root) {
@@ -60,7 +58,7 @@ public class BSTApp {
 		tree.insert(7);
 		tree.insert(13);
 		
-		System.out.println(search(tree.root, 8));
+		System.out.println(search(tree.root, 14));
 		System.out.println(search(tree.root, 5));
 		
 		System.out.println(getMin(tree.root));
