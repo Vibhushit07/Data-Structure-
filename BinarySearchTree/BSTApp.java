@@ -30,6 +30,21 @@ public class BSTApp {
 		
 		return temp.data;
 	}
+	
+	public static int getMax(Node root) {
+		if(root == null) {
+			System.out.println("Empty tree");
+			return -1;
+		}
+		
+		Node temp = root;
+		
+		while(temp.right != null) {
+			temp = temp.right;
+		}
+		
+		return temp.data;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -49,6 +64,8 @@ public class BSTApp {
 		System.out.println(search(tree.root, 5));
 		
 		System.out.println(getMin(tree.root));
+		
+		System.out.println(getMax(tree.root));
 	}
 
 }
