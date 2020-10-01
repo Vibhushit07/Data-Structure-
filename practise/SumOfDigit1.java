@@ -8,8 +8,8 @@ public class SumOfDigit1 {
 		while(input != 0) {
 			int rem = input % 10;
 			input /= 10;
-			
-			if(rem % 2 == 0) {
+			//checking the digit if it is odd or even
+			if(rem % 2 == 0) {  
 				sumEven += rem;
 			} else {
 				sumOdd += rem;
