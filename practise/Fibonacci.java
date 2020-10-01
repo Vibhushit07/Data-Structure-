@@ -7,8 +7,9 @@ public class Fibonacci {
 		int a = 0, b = 1, c = 1;
 		
 		for(int i = 1; i < input; i++) {
-			c = a + b;
-			a = b;
+			c = a + b; // current term
+			// updated previous term
+			a = b; 
 			b = c;
 		}
 		
