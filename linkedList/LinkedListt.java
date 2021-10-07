@@ -15,6 +15,9 @@ class MyLinkedListt{
 		}
 	}
 	
+	/*if head is NULL then assign node to head 
+	else iterate to the last node and append the new node after last node.*/
+	
 	public void insertAtEnd(int data) {
 		
 		Node node = new Node(data);
