@@ -36,6 +36,9 @@ class MyLinkedListt{
 		this.size++;
 	}
 	
+	/*point new node's next pointer to head and 
+	then assign head to new node*/
+	
 	public void insertAtHead(int data) {
 		
 		Node node = new Node(data);
