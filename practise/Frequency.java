@@ -3,6 +3,8 @@ package practise;
 public class Frequency {
 	
 	static int digitFre(int x) {
+		
+		//array to store frequency of digit
 		int freq[] = new int[10];
 		int max = -1, index = -1;
 		
