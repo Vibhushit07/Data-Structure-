@@ -1,7 +1,5 @@
 package circularLinkedList;
 
-import org.w3c.dom.Node;
-
 class MyCircularLinkedListt {
 	
 	Node head;
@@ -24,12 +22,10 @@ class MyCircularLinkedListt {
 		
 		if(this.head == null) {
 			newNode.next = newNode;
-			
 		} else {
 			Node temp = this.head;
 			
-			while(temp.next != this.head) {
-
+			while(temp != this.head) {
 				temp = temp.next;
 			}
 			
@@ -37,21 +33,8 @@ class MyCircularLinkedListt {
 			newNode.next = this.head;
 		}
 		
-		this.size++;
 		this.head = newNode;
 	}
-	
-//	public void printList() {
-//		
-//		Node temp = this.head;
-//		
-//		do {
-//			System.out.print(temp.data + " ");
-//			temp = temp.next;
-//		} while(temp != this.head);
-//		
-//		System.out.println();
-//	}
 }
 
 public class CircularLinkedListt {
@@ -65,8 +48,6 @@ public class CircularLinkedListt {
 		cl.insertAtBeginNaive(2);
 		cl.insertAtBeginNaive(3);
 		cl.insertAtBeginNaive(4);
-		
-//		cl.printList();
 	}
 
 }
