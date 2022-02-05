@@ -25,7 +25,7 @@ class MyCircularLinkedListt {
 		} else {
 			Node temp = this.head;
 			
-			while(temp != this.head) {
+			while(temp.next != this.head) {
 				temp = temp.next;
 			}
 			
