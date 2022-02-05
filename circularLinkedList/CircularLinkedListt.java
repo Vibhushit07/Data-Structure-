@@ -100,6 +100,20 @@ class MyCircularLinkedListt {
 		this.size++;
 	}
 	
+	public void deleteHeadNaive() {
+		
+		if(this.head == null || this.head.next == head) this.head = null;
+		
+		Node temp = this.head;
+		
+		while(temp.next != this.head) {
+			temp = temp.next;
+		}
+		
+		temp.next = this.head.next;
+		this.head = temp.next;
+	}
+	
 	public int size() {
 		return this.size;
 	}
@@ -146,6 +160,10 @@ public class CircularLinkedListt {
 		cl.printList();
 		
 		System.out.println(cl.size());
+		
+		cl.deleteHeadNaive();
+		
+		cl.printList();
 	}
 
 }
