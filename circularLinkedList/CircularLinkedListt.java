@@ -100,6 +100,10 @@ class MyCircularLinkedListt {
 		this.size++;
 	}
 	
+	public int size() {
+		return this.size;
+	}
+	
 	public void printList() {
 		
 		Node temp = this.head;
@@ -140,6 +144,8 @@ public class CircularLinkedListt {
 		cl.insertAtEndEfficient(8);
 		
 		cl.printList();
+		
+		System.out.println(cl.size());
 	}
 
 }
