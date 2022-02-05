@@ -5,6 +5,7 @@
 ### Sorting
 ### ArrayList
 ### LinkedList
+### Circular Linked List
 ### Stack
 ### Tree
 ### Binary Search Tree
