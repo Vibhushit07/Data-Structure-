@@ -114,6 +114,15 @@ class MyCircularLinkedListt {
 		this.head = temp.next;
 	}
 	
+	public void deleteHeadEfficient() {
+		
+		if(this.head == null || this.head.next == head) this.head = null;
+		
+		this.head.data = this.head.next.data;
+		
+		this.head.next = this.head.next.next;
+	}
+	
 	public int size() {
 		return this.size;
 	}
@@ -143,26 +152,24 @@ public class CircularLinkedListt {
 		cl.insertAtBeginNaive(2);
 		cl.insertAtBeginNaive(3);
 		cl.insertAtBeginNaive(4);
-		
 		cl.printList();
 		
 		cl.insertAtBeginEfficient(5);
 		cl.insertAtBeginEfficient(6);
-		
 		cl.printList();
 		
 		cl.insertAtEndNaive(7);
-		
 		cl.printList();
 		
 		cl.insertAtEndEfficient(8);
-		
 		cl.printList();
 		
 		System.out.println(cl.size());
 		
 		cl.deleteHeadNaive();
+		cl.printList();
 		
+		cl.deleteHeadEfficient();
 		cl.printList();
 	}
 
