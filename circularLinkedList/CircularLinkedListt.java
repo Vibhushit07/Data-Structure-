@@ -33,8 +33,10 @@ class MyCircularLinkedListt {
 			newNode.next = this.head;
 		}
 		
+		this.size++;
 		this.head = newNode;
 	}
+	
 }
 
 public class CircularLinkedListt {
