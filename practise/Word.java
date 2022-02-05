@@ -1,4 +1,4 @@
-package practise;
+ package practise;
 
 public class Word {
 	
