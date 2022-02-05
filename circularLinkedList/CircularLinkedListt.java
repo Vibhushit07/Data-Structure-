@@ -123,6 +123,28 @@ class MyCircularLinkedListt {
 		this.head.next = this.head.next.next;
 	}
 	
+	public void deleteKthNode(int k) {
+		
+		if(this.head != null) {
+			
+			if(k > size()) {
+				System.out.println("k cannot bew greater than length of list");
+				return;
+			}
+			
+			if(k == 1) deleteHeadEfficient();
+			
+			else {
+				Node temp = this.head;
+				
+				for(int i = 0; i < k-2; i++) 
+					temp = temp.next;
+				
+				temp.next = temp.next.next;
+			}
+		}
+	}
+	
 	public int size() {
 		return this.size;
 	}
@@ -170,6 +192,9 @@ public class CircularLinkedListt {
 		cl.printList();
 		
 		cl.deleteHeadEfficient();
+		cl.printList();
+		
+		cl.deleteKthNode(2);
 		cl.printList();
 	}
 
