@@ -52,6 +52,30 @@ class MyCircularLinkedListt {
 			this.head.data = newNode.data;
 			newNode.data = t;
 		}
+		
+		this.size++;
+	}
+	
+	public void insertAtEndNaive(int data) {
+		
+		Node newNode = new Node(data);
+		
+		if(this.head == null) {
+			newNode.next = newNode;
+			this.head = newNode;
+		} else {
+			Node temp = this.head;
+			
+			while(temp.next != this.head) {
+				temp = temp.next;
+			}
+			
+			temp.next = newNode;
+			newNode.next = this.head;
+		}
+		
+		this.size++;
+		
 	}
 	
 	public void printList() {
@@ -84,6 +108,10 @@ public class CircularLinkedListt {
 		
 		cl.insertAtBeginEfficient(5);
 		cl.insertAtBeginEfficient(6);
+		
+		cl.printList();
+		
+		cl.insertAtEndNaive(7);
 		
 		cl.printList();
 	}
