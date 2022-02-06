@@ -112,6 +112,8 @@ class MyCircularLinkedListt {
 		
 		temp.next = this.head.next;
 		this.head = temp.next;
+		
+		this.size--;
 	}
 	
 	public void deleteHeadEfficient() {
@@ -121,6 +123,8 @@ class MyCircularLinkedListt {
 		this.head.data = this.head.next.data;
 		
 		this.head.next = this.head.next.next;
+		
+		this.size--;
 	}
 	
 	public void deleteKthNode(int k) {
@@ -142,6 +146,8 @@ class MyCircularLinkedListt {
 				
 				temp.next = temp.next.next;
 			}
+			
+			this.size--;
 		}
 	}
 	
