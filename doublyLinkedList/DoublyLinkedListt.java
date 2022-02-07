@@ -3,6 +3,7 @@ package doublyLinkedList;
 class MyDoublyLinkedListt {
 	
 	Node head;
+	Node tail;
 	int size = 0;
 	
 	static class Node {
@@ -22,6 +23,7 @@ class MyDoublyLinkedListt {
 		
 		if(this.head == null) {
 			this.head = newNode;
+			this.tail = newNode;
 		} else {
 			this.head.prev = newNode;
 			newNode.next = this.head;
