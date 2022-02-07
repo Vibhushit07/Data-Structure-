@@ -73,6 +73,22 @@ class MyCircluarDoublyLinkedListt {
 		}
 	}
 	
+	public void deleteLast() {
+		
+		if(this.head != null) {
+			
+			if(this.head.next == this.head)
+				this.head = null;
+			else {
+				
+				this.head.prev.prev.next = this.head;
+				this.head.prev = this.head.prev.prev;
+			}
+			
+			this.size--;
+		}
+	}
+	
 	public int getSize() {
 		return this.size;
 	}
@@ -109,6 +125,10 @@ public class CircluarDoublyLinkedListt {
 		System.out.println(cdll.getSize());
 		
 		cdll.deleteHead();
+		cdll.printList();
+		System.out.println(cdll.getSize());
+		
+		cdll.deleteLast();
 		cdll.printList();
 		System.out.println(cdll.getSize());
 		
