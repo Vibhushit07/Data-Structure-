@@ -120,6 +120,26 @@ class MyDoublyLinkedListt {
 		}
 	}
 	
+	// delete at end of DLL using tail node
+		public void deleteLastTail() {
+			
+			if(this.head != null) {
+				
+				if(this.head.next == null) { 
+					this.head = null;
+					this.tail = null;
+				}
+				
+				else {
+					
+					this.tail = this.tail.prev;
+					this.tail.next = null;
+				}
+				
+				this.size--;
+			}
+		}
+	
 	public int getSize() {
 		return this.size;
 	}
@@ -162,6 +182,10 @@ public class DoublyLinkedListt {
 		System.out.println(dll.getSize());
 		
 		dll.insertAtEndTail(2);
+		dll.printDLL();
+		System.out.println(dll.getSize());
+		
+		dll.deleteLastTail();
 		dll.printDLL();
 		System.out.println(dll.getSize());
 	}
