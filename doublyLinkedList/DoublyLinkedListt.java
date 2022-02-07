@@ -52,6 +52,18 @@ class MyDoublyLinkedListt {
 		this.size++;
 	}
 	
+	public void deleteHead() {
+		
+		if(this.head == null || this.head.next == null) this.head = null;
+		
+		else {
+			this.head = this.head.next;
+			this.head.prev = null;
+		}
+		
+		this.size--;
+	}
+	
 	public int getSize() {
 		return this.size;
 	}
@@ -83,6 +95,9 @@ public class DoublyLinkedListt {
 		System.out.println(dll.getSize());
 		
 		dll.insertAtEnd(3);
+		dll.printDLL();
+		
+		dll.deleteHead();
 		dll.printDLL();
 	}
 
