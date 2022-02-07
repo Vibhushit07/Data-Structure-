@@ -65,16 +65,12 @@ class MyDoublyLinkedListt {
 		
 		if(this.head == null) {
 			this.head = newNode;
+			this.tail = newNode;
 		} else {
 			
-			Node curr = this.head;
-			
-			while(curr.next != null) {
-				curr = curr.next;
-			}
-			
-			curr.next = newNode;
-			newNode.prev = curr;
+			this.tail.next = newNode;
+			newNode.prev = this.tail;
+			this.tail = newNode;
 		}
 		
 		this.size++;
@@ -162,6 +158,10 @@ public class DoublyLinkedListt {
 		System.out.println(dll.getSize());
 		
 		dll.deleteLast();
+		dll.printDLL();
+		System.out.println(dll.getSize());
+		
+		dll.insertAtEndTail(2);
 		dll.printDLL();
 		System.out.println(dll.getSize());
 	}
