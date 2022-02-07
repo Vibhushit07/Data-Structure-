@@ -1,4 +1,4 @@
-package practise;
+package linkedList;
 
 class MyDoublyLinkedListt {
 	
