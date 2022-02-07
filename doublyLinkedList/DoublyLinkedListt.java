@@ -84,7 +84,10 @@ class MyDoublyLinkedListt {
 		
 		if(this.head != null) {
 		
-			if(this.head.next == null) this.head = null;
+			if(this.head.next == null) { 
+				this.head = null;
+				this.tail = null;
+			}
 			
 			else {
 				this.head = this.head.next;
@@ -95,11 +98,15 @@ class MyDoublyLinkedListt {
 		}
 	}
 	
+	// delete at end of DLL using head node
 	public void deleteLast() {
 		
 		if(this.head != null) {
 			
-			if(this.head.next == null) this.head = null;
+			if(this.head.next == null) { 
+				this.head = null;
+				this.tail = null;
+			}
 			
 			else {
 				
@@ -109,6 +116,7 @@ class MyDoublyLinkedListt {
 					curr = curr.next;
 				}
 				
+				this.tail = curr.prev;
 				curr.prev.next = null;
 			}
 			
