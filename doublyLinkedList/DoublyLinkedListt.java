@@ -31,6 +31,10 @@ class MyDoublyLinkedListt {
 		this.size++;
 	}
 	
+	public int getSize() {
+		return this.size;
+	}
+	
 	public void printDLL() {
 		
 		Node curr = this.head;
@@ -53,8 +57,9 @@ public class DoublyLinkedListt {
 		
 		dll.insertAtBegin(1);
 		dll.insertAtBegin(2);
-		
 		dll.printDLL();
+		
+		System.out.println(dll.getSize());
 	}
 
 }
