@@ -17,6 +17,7 @@ class MyDoublyLinkedListt {
 		}
 	}
 	
+	// insert at beginning of DLL using head node
 	public void insertAtBegin(int data) {
 		
 		Node newNode = new Node(data);
@@ -33,7 +34,32 @@ class MyDoublyLinkedListt {
 		this.size++;
 	}
 	
+	// insert at end of DLL using head node
 	public void insertAtEnd(int data) {
+		
+		Node newNode = new Node(data);
+		
+		if(this.head == null) {
+			this.head = newNode;
+			this.tail = newNode;
+		} else {
+			
+			Node curr = this.head;
+			
+			while(curr.next != null) {
+				curr = curr.next;
+			}
+			
+			curr.next = newNode;
+			newNode.prev = curr;
+			this.tail = newNode;
+		}
+		
+		this.size++;
+	}
+	
+	// insert at end of DLL using tail node
+	public void insertAtEndTail(int data) {
 		
 		Node newNode = new Node(data);
 		
