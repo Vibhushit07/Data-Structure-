@@ -21,7 +21,6 @@ class MyCircluarDoublyLinkedListt {
 		Node newNode = new Node(data);
 		
 		if(this.head == null) {
-			this.head = newNode;
 			newNode.next = newNode;
 			newNode.prev = newNode;
 		} else {
@@ -30,10 +29,19 @@ class MyCircluarDoublyLinkedListt {
 			newNode.prev = this.head.prev;
 			newNode.next = this.head;
 			this.head.prev = newNode;
-			this.head = newNode;
 		}
-
+		
+		this.head = newNode;
 		this.size++;
+	}
+	
+	public void insertAtEnd(int data) {
+		
+		Node newNode = new Node(data);
+		
+		if(this.head == null) {
+			
+		}
 	}
 	
 	public int getSize() {
