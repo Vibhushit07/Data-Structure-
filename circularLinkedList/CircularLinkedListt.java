@@ -102,29 +102,39 @@ class MyCircularLinkedListt {
 	
 	public void deleteHeadNaive() {
 		
-		if(this.head == null || this.head.next == head) this.head = null;
+		if(this.head != null) {
 		
-		Node temp = this.head;
-		
-		while(temp.next != this.head) {
-			temp = temp.next;
+			if(this.head.next == head) this.head = null;
+			
+			else {
+				Node temp = this.head;
+			
+				while(temp.next != this.head) {
+					temp = temp.next;
+				}
+			
+				temp.next = this.head.next;
+				this.head = temp.next;
+			}
+			
+			this.size--;
 		}
-		
-		temp.next = this.head.next;
-		this.head = temp.next;
-		
-		this.size--;
 	}
 	
 	public void deleteHeadEfficient() {
 		
-		if(this.head == null || this.head.next == head) this.head = null;
-		
-		this.head.data = this.head.next.data;
-		
-		this.head.next = this.head.next.next;
-		
-		this.size--;
+		if(this.head != null) {
+			
+			if(this.head.next == head) this.head = null;
+			
+			else {
+			
+				this.head.data = this.head.next.data;
+				this.head.next = this.head.next.next;			
+			}
+			
+			this.size--;
+		}
 	}
 	
 	public void deleteKthNode(int k) {
@@ -132,7 +142,7 @@ class MyCircularLinkedListt {
 		if(this.head != null) {
 			
 			if(k > size()) {
-				System.out.println("k cannot bew greater than length of list");
+				System.out.println("k cannot be greater than length of list");
 				return;
 			}
 			
@@ -145,9 +155,9 @@ class MyCircularLinkedListt {
 					temp = temp.next;
 				
 				temp.next = temp.next.next;
+				
+				this.size--;
 			}
-			
-			this.size--;
 		}
 	}
 	
