@@ -40,8 +40,18 @@ class MyCircluarDoublyLinkedListt {
 		Node newNode = new Node(data);
 		
 		if(this.head == null) {
+			this.head = newNode;
+			newNode.next = newNode.prev = newNode;
+		} else {
 			
+			this.head.prev.next = newNode;
+			newNode.prev = this.head.prev;
+			
+			newNode.next = this.head;
+			this.head.prev = newNode;
 		}
+		
+		this.size++;
 	}
 	
 	public int getSize() {
@@ -71,6 +81,11 @@ public class CircluarDoublyLinkedListt {
 		cdll.insertAtBegin(1);
 		cdll.insertAtBegin(2);
 		cdll.insertAtBegin(3);
+		cdll.printList();
+		System.out.println(cdll.getSize());
+		
+		cdll.insertAtEnd(4);
+		cdll.insertAtEnd(5);
 		cdll.printList();
 		System.out.println(cdll.getSize());
 	}
