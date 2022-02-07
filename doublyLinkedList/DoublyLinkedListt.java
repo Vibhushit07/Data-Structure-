@@ -54,14 +54,17 @@ class MyDoublyLinkedListt {
 	
 	public void deleteHead() {
 		
-		if(this.head == null || this.head.next == null) this.head = null;
+		if(this.head != null) {
 		
-		else {
-			this.head = this.head.next;
-			this.head.prev = null;
+			if(this.head.next == null) this.head = null;
+			
+			else {
+				this.head = this.head.next;
+				this.head.prev = null;
+			}
+			
+			this.size--;
 		}
-		
-		this.size--;
 	}
 	
 	public int getSize() {
