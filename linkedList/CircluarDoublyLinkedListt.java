@@ -15,6 +15,22 @@ class MyCircluarDoublyLinkedListt {
 			this.next = this.prev = null;
 		}
 	}
+	
+	public void insertAtBegin(int data) {
+		
+		Node newNode = new Node(data);
+		
+		if(this.head == null) {
+			this.head = newNode;
+		} else {
+			
+			newNode.next = this.head;
+			this.head.prev = newNode;
+			this.head = newNode;
+		}
+		
+		this.size++;
+	}
 }
 
 public class CircluarDoublyLinkedListt {
