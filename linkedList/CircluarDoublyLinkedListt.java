@@ -36,6 +36,10 @@ class MyCircluarDoublyLinkedListt {
 		this.size++;
 	}
 	
+	public int getSize() {
+		return this.size;
+	}
+	
 	public void printList() {
 		
 		Node curr = this.head;
@@ -60,6 +64,7 @@ public class CircluarDoublyLinkedListt {
 		cdll.insertAtBegin(2);
 		cdll.insertAtBegin(3);
 		cdll.printList();
+		System.out.println(cdll.getSize());
 	}
 
 }
