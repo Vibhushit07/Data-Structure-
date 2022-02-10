@@ -6,7 +6,7 @@ class MyDequee {
 	int front, size;
 	
 	public MyDequee(int cap) {
-		arr = new int[cap];
+		this.arr = new int[cap];
 	}
 	
 	public boolean isFull() {
