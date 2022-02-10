@@ -48,6 +48,16 @@ class MyDequee {
 		this.arr[(this.front + this.size++) % this.arr.length] = data;
 	}
 	
+	public void deleteFront() {
+		
+		if(this.isEmpty()) {
+			System.out.println("Deque is empty");
+		} else {
+			this.front = (this.front + 1) % this.arr.length;
+			this.size--;
+		}
+	}
+	
 	public void printDeque() {
 		
 		for(int i = 0; i < this.size; i++) {
@@ -71,6 +81,10 @@ public class Dequee {
 		System.out.println(md.getSize());
 		
 		md.insertRear(3);
+		md.printDeque();
+		System.out.println(md.getSize());
+		
+		md.deleteFront();
 		md.printDeque();
 		System.out.println(md.getSize());
 
