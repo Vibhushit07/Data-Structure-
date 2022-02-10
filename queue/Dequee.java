@@ -37,12 +37,28 @@ class MyDequee {
 		
 		this.size++;
 	}
+	
+	public void printDeque() {
+		
+		for(int i = 0; i < this.size; i++) {
+			System.out.print(this.arr[(this.front + i) % this.arr.length] + " ");
+		}
+		
+		System.out.println();
+	}
 }
 
 public class Dequee {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		MyDequee md = new MyDequee(6);
+		
+		md.insertFront(1);
+		md.insertFront(2);
+		md.printDeque();
+		System.out.println(md.getSize());
 
 	}
 
