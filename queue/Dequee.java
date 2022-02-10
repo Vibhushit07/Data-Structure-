@@ -38,6 +38,16 @@ class MyDequee {
 		this.size++;
 	}
 	
+	public void insertRear(int data) {
+		
+		if(this.isFull()) {
+			System.out.println("Deque is full");
+			return;
+		}
+		
+		this.arr[(this.front + this.size++) % this.arr.length] = data;
+	}
+	
 	public void printDeque() {
 		
 		for(int i = 0; i < this.size; i++) {
@@ -57,6 +67,10 @@ public class Dequee {
 		
 		md.insertFront(1);
 		md.insertFront(2);
+		md.printDeque();
+		System.out.println(md.getSize());
+		
+		md.insertRear(3);
 		md.printDeque();
 		System.out.println(md.getSize());
 
