@@ -20,6 +20,23 @@ class MyDequee {
 	public int getSize() {
 		return this.size;
 	}
+	
+	public void insertFront(int data) {
+		
+		if(this.isFull()) {
+			System.out.println("Deque is full");
+			return;
+		}
+		
+		if(this.front == 0) {
+			this.front = this.arr.length - 1;
+			this.arr[this.front] = data;
+		} else {
+			this.arr[(--this.front) % this.arr.length] = data;
+		}
+		
+		this.size++;
+	}
 }
 
 public class Dequee {
