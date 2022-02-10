@@ -58,6 +58,15 @@ class MyDequee {
 		}
 	}
 	
+	public void deleteRear() {
+		
+		if(this.isEmpty()) {
+			System.out.println("Deque is empty");
+		} else {
+			this.size--;
+		}
+	}
+	
 	public void printDeque() {
 		
 		for(int i = 0; i < this.size; i++) {
@@ -85,6 +94,10 @@ public class Dequee {
 		System.out.println(md.getSize());
 		
 		md.deleteFront();
+		md.printDeque();
+		System.out.println(md.getSize());
+		
+		md.deleteRear();
 		md.printDeque();
 		System.out.println(md.getSize());
 
