@@ -9,6 +9,9 @@ class MyDequee {
 		arr = new int[cap];
 	}
 	
+	public boolean isFull() {
+		return size == arr.length;
+	}
 }
 
 public class Dequee {
