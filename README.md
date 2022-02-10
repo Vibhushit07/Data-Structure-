@@ -3,10 +3,20 @@
 
 ### Searching
 ### Sorting
+#### - Bubble Sort
+#### - Insertion Sort
+#### - Selection Sort
+#### - Merge Sort
 ### ArrayList
+### Strings
 ### LinkedList
-### Circular Linked List
+#### - Doubly Linked List
+#### - Circular Linked List
+#### - Doubly Circular Linked List
 ### Stack
+### Queue
+#### - Queues
+#### - Deque
 ### Tree
 ### Binary Search Tree
 ### Hashing
