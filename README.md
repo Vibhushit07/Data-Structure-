@@ -15,7 +15,6 @@
 #### - Doubly Circular Linked List
 ### Stack
 ### Queue
-#### - Queues
 #### - Deque
 ### Tree
 ### Binary Search Tree
