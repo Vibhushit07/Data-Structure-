@@ -16,6 +16,10 @@ class MyDequee {
 	public boolean isEmpty() {
 		return size == 0;
 	}
+	
+	public int getSize() {
+		return this.size;
+	}
 }
 
 public class Dequee {
