@@ -10,7 +10,7 @@ class MyDequee {
 	}
 	
 	public boolean isFull() {
-		return size == arr.length;
+		return this.size == arr.length;
 	}
 	
 	public boolean isEmpty() {
